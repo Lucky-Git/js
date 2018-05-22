@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>重写</title>
+ </head>
+ <body>
+	<script>
+		var lilei={
+			sname:"Li Lei",
+			sage:11,
+			intro:function(){
+				console.log("I'm "+this.snage,"I'm "+this.sage);
+			},
+			toString:function(){
+				return "{sname:"+this.sname+",sage:"+this.sage+"}";
+			} 
+		}
+		console.log(lilei.toString());
+	</script>
+ </body>
+</html>

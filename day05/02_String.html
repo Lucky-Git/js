@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>包装类型</title>
+ </head>
+ <body>
+  <script>
+  //作业：让IE8也支持trim
+	if(typeof String.prototype.trim!=="function"){
+		String.prototype.trim=function(){
+			document.write("调用自定义trim()<br>");
+			return this.replace(/^\s+|\s*$/g,"");
+		}
+	}
+	var str="  hello   world   ";
+	document.write(str.trim());
+  </script>
+ </body>
+</html>

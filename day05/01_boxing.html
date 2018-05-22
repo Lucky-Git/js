@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>包装类型</title>
+ </head>
+ <body>
+  <script>
+	//var str="hello";//字符串不能存属性，
+	var str=new String("hello");
+	str.money=10;
+	//new String(str).money=10
+	//释放
+	console.log(str.money);//undefined
+						//new String(str).money
+	/*var obj=new Object("tom");
+	obj.age=11;
+	obj.sex="m";
+	console.log(obj,typeof(obj));*/
+  </script>
+ </body>
+</html>

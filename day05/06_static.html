@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>静态方法</title>
+ </head>
+ <body>
+  <script>
+	if(typeof Array.isArray!=="function"){
+		Array.isArray=function(obj){
+			document.write("调用自定义的isArray<br>");
+			return Object.prototype.toString.call(obj)==="[object Array]";
+		}
+	}
+	var obj1={},obj2=[],obj3=new Date(),obj4=/^\d{6}$/;
+	obj4.__proto__=Array.prototype;
+	document.write(
+		Array.isArray(obj1)+"<br>"+
+		Array.isArray(obj2)+"<br>"+
+		Array.isArray(obj3)+"<br>"+
+		Array.isArray(obj4));
+  </script>
+ </body>
+</html>

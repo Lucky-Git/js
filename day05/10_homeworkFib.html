@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>homework</title>
+ </head>
+ <body>
+	<script>
+		//使用递归和循环两种方式，实现计算斐波那契数列的函数
+		//要求：fib(5) 5 fib(10) 55
+
+		//函数实现
+		/*function fib(n){
+			if(n===1||n===2){
+				return 1;
+			}else{
+				return fib(n-1)+fib(n-2);
+			}
+		}
+		console.log(fib(5),fib(10));*/
+		//循环实现
+		function fib(n){
+			if(n===1||n===2){
+				return 1;
+			}else{
+				var t1=1,t2=2;
+				for(var i=3;i<n;i++){
+					var t3=t1+t2;
+					t1=t2;
+					t2=t3;
+				}
+				return t3;
+			}
+			
+		}
+		console.log(fib(10));
+	</script>
+ </body>
+</html>
