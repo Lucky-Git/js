@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+	var arr1=[1,2,3,2,1];
+	var arr2=[2,4,6,8,10];
+	//判断哪个数组都由偶数组成
+	/*var b1=arr1.every(function(elem){
+		return elem%2==0;//只要有一个false，就返回false
+	});
+	console.log(b1);
+	var b2=arr2.every(function(elem,i,arr){
+		return elem%2==0;
+	});
+	console.log(b2);*/
+
+	//判断是否升序排列
+	var b1=arr1.every(function(elem,i,arr){
+		return i<arr.length-1?elem<=arr[i+1]:true;
+	});
+	var b2=arr2.every(function(elem,i,arr){
+		return i<arr.length-1?elem<=arr[i+1]:true;
+	});
+	console.log(b1,b2);
+
+  </script>
+ </body>
+</html>

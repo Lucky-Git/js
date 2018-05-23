@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>call,apply</title>
+ </head>
+ <body>
+	<script>
+		function calc(base,bonus1,bonus2){
+			console.log(this.ename+"的总工资是："+(base+bonus1+bonus2));
+		}
+		var lilei={ename:"Li Lei"};
+		var hmm={ename:"Han Meimei"};
+		//call,apply的this临时借用
+		calc.call(lilei,10000,2000,3000);
+		var arr=[4000,5000,6000];
+		calc.apply(hmm,arr);
+
+		var lilei_calc=calc.bind(lilei,10000);
+		console.log(lilei_calc);
+		console.log(lilei_calc==calc);//false,说明创建了一个新函数与原来的函数一样
+		lilei_calc(3000,4000);
+		lilei_calc.call(hmm,5000,4000,4000);
+	</script>
+ </body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>create</title>
+ </head>
+ <body>
+	<script>
+		var father={bal:100000000,car:"infiniti"};
+		var hmm=Object.create(father,{
+			bao:{
+				value:"LV",
+				writable:true,
+				enumerable:true,
+				configurable:false
+			},
+			phone:{
+				value:"iPhoneX",
+				writable:true,
+				enumerable:true,
+				configurable:false
+			
+			}
+		});
+		console.log(hmm);
+		console.log(hmm.bal,hmm.car);
+	</script>
+ </body>
+</html>

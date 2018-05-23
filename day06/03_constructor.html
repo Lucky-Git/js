@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+	"use strict";
+	function Emp(id,ename,salary,age){//构造函数
+		Object.defineProperties(this,{
+			id:{
+				value:id,
+				writable:false,
+				enumerable:true
+			},
+			ename:{
+				value:ename,
+				writable:true,
+				enumerable:true
+			},
+			salary:{
+				value:salary,
+				writable:true,
+				enumerable:false
+			},
+			_age:{
+				writable:true,
+				enumerable:true
+			},
+		});
+		this.age=age;
+
+		//Object.preventExtensions(this);
+		Object.seal(this);
+	}
+	//Emp.prototype.age={...}是错的，因为访问器属性是内部属性，不能用.访问
+	Object.defineProperty(Emp.prototype,"age",{
+		get:function(){return this._age},//相当于value
+		set:function(val){//val自动获取新值
+			if(val>=18&&val<=65){
+				this._age=val;
+			}else{
+				throw new Error("年龄必须介于18-65");
+			}
+		},
+		enumerable:true,
+		configurable:false
+	});
+	var eric=new Emp(1001,"艾瑞克",12000,26);
+	//eric.id=1002;
+	delete eric.ename;
+	console.log(eric);
+	for(var key in eric){
+		console.log(key+":"+eric[key]);
+	}
+	//eric.age=-2;
+	//eric.Age=-2;
+	console.log(eric);
+  </script>
+ </body>
+</html>

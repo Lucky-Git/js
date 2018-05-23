@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>属性</title>
+ </head>
+ <body>
+  <script>
+	"use strict"
+	var eric={id:1001,ename:"艾瑞克",salary:12000};
+	var id_attr=Object.getOwnPropertyDescriptor(eric,"id");
+	console.log(id_attr);
+	/*Object.defineProperty(eric,"id",{
+		writable:false,
+		configurable:false
+	});
+	Object.defineProperty(eric,"id",{
+		writable:true,
+		configurable:true
+	});*/
+	Object.defineProperties(eric,{
+		id:{
+			writable:false,
+			configurable:false
+		},
+		ename:{configurable:false},
+		salary:{enumerable:false,configurable:false}
+	});
+	//eric.id=1002;
+	//delete eric.ename;
+	console.log(eric);
+	for(var key in eric){
+		console.log(key+":"+eric[key]);
+	}
+  </script>
+ </body>
+</html>
