@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>克隆</title>
+ </head>
+ <body>
+	<script>
+	//浅克隆
+		function clone(obj){
+			var newObj={};
+			for(var key in obj){
+				//newObj.key=obj.key;NO
+				//newObj["key"]=obj["key"];NO
+				newObj[key]=obj[key];//yes
+
+			}
+			return newObj;
+		}
+		//深克隆
+		function clone_deep(obj){
+			var json=JSON.stringify(obj);
+			return JSON.parse(json);
+		}
+		var lilei={
+			sname:"Li Lei",
+			sage:11,
+			intro:function(){
+				console.log("I am "+this.sname+",I am "+this.sage);
+			},
+			address:{
+				city:"苏州",
+				street:"崇文路"
+			}
+		}
+		var lilei_clone=clone(lilei);
+		console.log(lilei_clone);
+		console.log(lilei==lilei_clone);//false比的是地址
+		console.log(lilei.intro==lilei_clone.intro);//true浅克隆（原始类型），值克隆
+		
+		var lilei_clone_deep=clone_deep(lilei);
+		console.log(lilei_clone_deep);
+		console.log(lilei==lilei_clone_deep);//false比的是地址
+		console.log(lilei.intro==lilei_clone_deep.intro);//false深克隆（引用类型），值克隆
+	</script>
+ 
+  
+ </body>
+</html>

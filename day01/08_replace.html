@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>replace</title>
+ </head>
+ <body>
+	<script>
+		var str="静静嫌妈妈做饭不好吃，静静妈妈特意报了培训班，几个月后，静静妈妈终于用跆拳道打的静静乖乖吃饭了";
+		var arr=str.match(/静静/g);
+		str=str.replace(/静静/g,"**");
+		console.log(str);
+		if(arr!=null){
+			console.log("共替换"+arr.length+"处");
+		}else{
+			console.log("共替换0处");
+		}
+	</script>
+ </body>
+</html>

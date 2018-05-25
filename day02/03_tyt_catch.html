@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>错误处理</title>
+ </head>
+ <body>
+	<script>
+		var num=parseFloat(prompt("请输入数字"));
+		var d=parseInt(prompt("输入小数位数"));
+		if(d>=0&&d<=100){//try{
+			var result=num.toFixed(d);
+			console.log(result);
+		}else{//catch(err){
+			//console.log("出错啦！"+err);
+			console.log("出错啦：小数位数必须介于0~100之间");
+		}
+		console.log("程序继续执行");
+	</script>
+ </body>
+</html>

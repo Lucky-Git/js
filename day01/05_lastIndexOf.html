@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>lastIndexOf</title>
+ </head>
+ <body>
+	<script>
+		var url="http://tmooc.cn/imgs/logo.png";
+		var i=url.lastIndexOf("/");
+		var filename=url.slice(i+1);
+		var i=url.lastIndexOf(".");
+		var extend=url.slice(i);
+		console.log(filename,extend);
+	</script>
+ </body>
+</html>

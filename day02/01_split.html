@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>分隔符</title>
+ </head>
+ <body>
+	<script>
+		var qs="?uname=dongdong&upwd=123456&fav=running";
+		var params=qs.slice(1).split("&");
+		console.log(params);
+		//鄙视：将字符串中的字符升序排列
+		var str="you need cry,dear!";
+		var chars=str.split("");
+		chars.sort();//排序后的数组
+		str=chars.join("");//将数组转化成字符串
+		console.log(str);//输出字符串
+	</script>
+ </body>
+</html>

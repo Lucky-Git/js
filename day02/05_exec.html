@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>exec</title>
+ </head>
+ <body>
+  <script>
+	var str="明明喜欢我，去不告诉我。别理我，我想静静。静静是谁？你先告诉我明明是谁？";
+	var reg=/明明|静静/g;
+	do{
+		var arr=reg.exec(str);
+		if(arr!=null){
+			var i=arr.index;//arr["index"]
+			var kw=arr[0];
+			var n=reg.lastIndex;
+			console.log("在位置"+i+"发现关键词："+kw+", 下次从"+n+"开始");
+		}else{
+			break;
+		}
+	
+	}while(true);
+  </script>
+ </body>
+</html>

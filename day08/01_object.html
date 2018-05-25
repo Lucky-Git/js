@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>对象</title>
+ </head>
+ <body>
+	<script>
+		var lilei={
+			sname:"Li Lei",
+			sage:11,
+			intro(){
+				console.log("I am "+this.sname+",I am "+this.sage);
+			}
+		}
+		var hmm=new Object();
+		console.log(hmm);
+		console.log(lilei.sage);
+		lilei.sage++;
+		console.log(lilei.sage);
+		lilei.intro();//this->lilei(从调用中可以看出this指谁，不调用的话不知道，调用的对象就是.前的对象（lilei）)
+	</script>
+ </body>
+</html>

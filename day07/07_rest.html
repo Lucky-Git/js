@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>rest</title>
+ </head>
+ <body>
+	<script>
+		function calc(base,...bonus){
+			var sum=bonus.reduce(function(prev,elem){
+				return prev+elem;
+			});
+			console.log("底薪："+base);
+			console.log("奖金："+sum);
+			//将类数组对象转为数组
+			var argus=Array.prototype.slice.call(arguments);
+						//arguments.slice()
+						//[].slice.call(arguments)
+			var total=argus.reduce(function(prev,elem){
+				return prev+elem;
+			});
+			console.log("总工资："+total);
+		}
+		calc(10000,1000,2000,3000);
+		calc(3000,4000,5000);
+	</script>
+ </body>
+</html>

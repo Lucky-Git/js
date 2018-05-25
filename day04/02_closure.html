@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>闭包——button</title>
+ </head>
+ <body>
+  <button id="zan">赞(0+)</button>
+  <button id="cai">踩(0+)</button>
+  <script>
+  zan.onclick=(function(){
+	var i=0;
+	return function(){
+		i++;
+		zan.innerHTML="赞(+"+i+")";
+	}
+  })();
+  cai.onclick=(function(){
+	var i=0;
+	return function(){
+		i++;
+		cai.innerHTML="踩(+"+i+")";
+	}
+  })();
+  </script>
+ </body>
+</html>

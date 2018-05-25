@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>闭包练习题</title>
+ </head>
+ <body>
+	<script>
+		function fun(){
+			var n=999;
+			nAdd=function(){n++;}
+			return function(){
+				console.log(n);
+			}
+		}
+		var get=fun();
+		get();//999(nAdd函数还没调用，故n不变 )
+		nAdd();
+		get();//1000
+
+		function fn(){
+			for(var i=0,arr=[];i<3;i++){
+				arr[i]=function(){console.log(i);}
+				//arr[i]=(function(k){return k;console.log(k);})(i);
+			}
+			return arr;
+		}
+		var funs=fn();
+		//funs:?函数数组，即3个function
+		//0:function(){console.log(i);}
+		//1:function(){console.log(i);}
+		//2:function(){console.log(i);}
+		console.log(funs);
+		funs[0](); //?3
+		console.log(funs[0]);
+		funs[1](); //?3
+		funs[2](); //?3
+
+
+	
+	</script>
+ </body>
+</html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>sqrt</title>
+ </head>
+ <body>
+	<script>
+		var fish_x=100,fish_y=100,fish_r=50;
+		var boom_x=140,boom_y=140,boom_r=10;
+		var dist=Math.sqrt(Math.pow(boom_x-fish_x,2)+Math.pow(boom_y-fish_y,2)); 
+		if(dist<=boom_r+fish_r){
+			alert("抓到鱼啦");
+		}
+	</script>
+ </body>
+</html>

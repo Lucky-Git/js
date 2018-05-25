@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>验证码</title>
+ </head>
+ <body>
+	<script>
+		var code="Ab8u";
+		do{
+			var input=prompt("请输入验证码"+code);
+			if(input.toLowerCase()!=code.toLowerCase()){
+				alert("验证码错误，请重新输入");
+			}else{
+				document.write("验证通过");
+				break;	
+			}
+		}while(true);
+		
+	</script>
+ </body>
+</html>

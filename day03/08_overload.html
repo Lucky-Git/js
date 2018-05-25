@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>重载</title>
+ </head>
+ <body>
+	<script>
+		function pay(){
+			if(arguments.length===0)
+			console.log("手机结账");
+			else if(arguments.length===1)
+			document.write("现金结账");
+			else
+			alert("刷卡结账");
+		}
+		pay();
+		pay(100);
+		pay("566213","123456");
+	</script>
+ </body> 
+</html>

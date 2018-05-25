@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>解构</title>
+ </head>
+ <body>
+	<script>
+		/*function conn({
+			ip:ip,
+			port:port,
+			db:db,
+			user:user,
+			pwd:pwd
+		}){*/
+		function conn({ip,port,db,user,pwd}){
+			ip=ip||"localhost",
+			port=port||3306,
+			db=db||"test",
+			user=user||"root",
+			pwd=pwd||"",
+			console.log(ip,port,db,user,pwd);
+		}
+		conn({port:8080,user:"sa"});
+	</script>
+ </body>
+</html>

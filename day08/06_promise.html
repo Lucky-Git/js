@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+	function run(url){
+		return new Promise(function(open){
+			//1.创建异步对象
+			var xhr=new XMLHttpRequest();
+			//2.绑定监听事件
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4&&xhr.status==200){
+					console.log(xhr.responseText);
+					open();
+				} 
+			}
+			//3.打开连接
+			xhr.open("get",url,true);
+			//4.发送请求
+			xhr.send(null);
+		}); 
+	}
+	console.log("文华起跑...");
+	run("03_wenhua.php")//Promise
+	.then(function(){
+		console.log("燕儿起跑...");
+		return run("03_yaner.php");
+	})
+	.then(function(){
+		console.log("东东起跑...");
+		run("03_dong.php");
+	}
+	
+	)
+  </script>
+ </body>
+</html>

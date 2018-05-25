@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>构造函数</title>
+ </head>
+ <body>
+	<script>
+		function Student(sname,sage){
+			this.sname=sname;
+			this.sage=sage;
+		}
+		Student.prototype.intro=function(){
+				console.log("I am "+this.sname+",I am "+this.sage);
+			}
+		var lilei=new Student("Li Lei",11);
+		console.log(lilei);
+		var hmm=new Student("Han Meimei",12);
+		console.log(hmm);
+		lilei.intro();
+		hmm.intro();
+	</script>
+ </body>
+</html>

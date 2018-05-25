@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>indexOf</title>
+ </head>
+ <body>
+	<script>
+		var msg="那天，我去了她家。我说：我qu！你家真大！";
+		var i=msg.indexOf("擦");
+		console.log(i);
+		if(i!=-1){
+			document.write("<h1>把123关小黑屋</h1>");
+		}else{
+			document.write("<h1>123:"+msg+"</h1>");
+		}
+		var str="no zuo no die,no can no bili";
+		var i=-1;
+		do{
+			var i=str.indexOf("no",i+1);
+			if(i!=-1){
+				console.log(i);
+			}else{
+				break;
+			}
+
+		}while(true);
+	</script>
+ </body>
+</html>

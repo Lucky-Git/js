@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>throw</title>
+ </head>
+ <body>
+	<script>
+		//方法定义者
+		function round(num,d){
+			if(!isNaN(num)&&!isNaN(d)){
+				num*=Math.pow(10,d);
+				num=Math.round(num);
+				return num/Math.pow(10,d);
+			}else{
+				throw new Error("文华，必须输入数字！");
+			}
+		} 
+
+		//方法使用者
+		var input=prompt("请输入数字");
+		var d=prompt("请输入小数位数");
+		if(!isNaN(input)&&!isNaN(d)){
+			var result=round(input,d);
+			console.log(result);
+		}else{
+			console.log("必需输入数字");
+		}
+		console.log("程序继续执行...");
+	</script>
+ </body>
+</html>

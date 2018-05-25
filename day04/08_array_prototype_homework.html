@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>内置对象的原型</title>
+ </head>
+ <body>
+	<script>
+		if(typeof Array.prototype.indexOf!=="function"){
+			Array.prototype.indexOf=function(kw,fromi){
+				//参数：关键词kw，开始位置fromi
+				document.write("调用自带的indexOf<br>");
+				fromi=fromi||0;//默认值
+				for(var i=fromi;i<this.length;i++){
+					if(this[i]===kw){
+						return i;
+					}
+				}
+				return -1;
+			
+			}
+		}
+		var arr=[1,2,3,4,3,2,1];
+		       //0 1 2 3 4 5 6
+		document.write(arr.indexOf(2)+"<br>"); //1
+		document.write(arr.indexOf(2,2)+"<br>"); //5
+		document.write(arr.indexOf(5)+"<br>"); //-1
+		console.log(typeof(Array.prototype.indexOf));
+	</script>
+ </body>
+</html>

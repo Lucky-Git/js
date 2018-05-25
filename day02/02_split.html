@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>切割2</title>
+ </head>
+ <body>
+	<ul id="ulScores">
+		<li>90</li>
+		<li>35</li>
+		<li>89</li>
+		<li>79</li>
+	</ul>
+	<script>
+		var html=ulScores.innerHTML;
+		html=html.replace(/^\s*<li>|<\/li>\s*$/ig,"");
+		var scores=html.split(/<\/li>\s*<li>/i);
+		scores.sort(function(a,b){return b-a;});
+		console.log(scores);
+	</script>
+ </body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>let</title>
+ </head>
+ <body>
+	<script>
+		var b=10;
+		function f(){
+			console.log(b);//报错
+			let b=100;
+			console.log(b);
+		}
+		f();
+	</script>
+ </body>
+</html>

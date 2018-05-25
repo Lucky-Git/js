@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>search</title>
+ </head>
+ <body>
+	<script>
+		var msg="那天，文华去了她家。文华说：我cao！你家真大！";
+		var i=msg.search(/[我卧]\s*(cao|[艹操草])/);
+		console.log(i);
+		if(i!=-1){
+			document.write("<h1>把文华关小黑屋</h1>");
+		}else{
+			document.write("<h1>123:"+msg+"</h1>");
+		}
+		var str="no zuo no die,no can no bili";
+		var i=-1;
+		do{
+			var i=str.indexOf("no",i+1);
+			if(i!=-1){
+				console.log(i);
+			}else{
+				break;
+			}
+
+		}while(true);
+	</script>
+ </body>
+</html>

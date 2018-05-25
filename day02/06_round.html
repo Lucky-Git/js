@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>round</title>
+ </head>
+ <body>
+	<script>
+		function round(num,d){
+			num*=Math.pow(10,d);
+			num=Math.round(num);
+			num=num/Math.pow(10,d);
+			return num;
+		}
+		console.log(round(345.678,2),round(345.678,0),round(345.678,-1));
+	</script>
+ </body>
+</html>

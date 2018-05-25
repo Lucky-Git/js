@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>homework_2</title>
+ </head>
+ <body>
+	<script>
+		var str="      zhang        dong        ";
+		function leftTrim(str){
+			return str.replace(/^\s+/,"");
+		}
+		console.log(leftTrim(str));
+		function rightTrim(str){
+			return str.replace(/\s+$/,"");
+		}
+		console.log(rightTrim(str));
+		function trim(str){
+			return str.replace(/^\s+|\s+$/g,"");
+		}
+		console.log(trim(str));
+	</script>
+ </body>
+</html>

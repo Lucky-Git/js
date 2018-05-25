@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>声明提前</title>
+ </head>
+ <body>
+	<script>
+		var b=10;
+		function f(){
+			console.log(b);
+			var b=100;
+			console.log(b);
+		}
+		f();
+		console.log(b);
+	</script>	
+ </body>
+</html>

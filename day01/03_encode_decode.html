@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>转码解码</title>
+ </head>
+ <body>
+	<script>
+		var msg="大家好，我是Lucky!";
+	    function encode(msg){
+			var code="";
+			for(var i=0;i<msg.length;i++){
+				var uc=msg.charCodeAt(i);
+				if(uc<100){
+					uc="000"+uc;
+				}else if(uc<1000){
+					uc="00"+uc;
+				}
+				/*uc=(uc+100000+"").slice(1);*/
+				code+=uc;
+			}
+			return code;
+		}
+		var code=encode(msg);
+		console.log(code);
+		function decode(code){
+			var msg="";
+			for(var i=0;i<code.length;i+=5){
+				var uc=code.slice(i,i+5);
+				msg+=String.fromCharCode(uc);
+			}
+			return msg;
+		}
+		var msg2=decode(code);
+		console.log(msg2);
+	</script>	
+ </body>
+</html>

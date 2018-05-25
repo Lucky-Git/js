@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>块级元素</title>
+ </head>
+ <body>
+	<script>
+		var t=0;
+		function conn(){
+			t+=0.3;
+			console.log("建立连接耗时"+t+"秒");
+		}
+		function query(){
+			console.log(t);
+			t+=0.8;
+			console.log(t);
+			console.log("查询数据耗时0.8s");
+
+			var error=false;
+			if(error){
+				var t=new Date();//声明提前到作用域顶部
+					console.log("出错啦！at："+t.toLocaleString());
+				/*(function(){
+					//let t=new Date();
+					var t=new Date();
+					console.log("出错啦！at："+t.toLocaleString())})();*/
+			}
+		}
+		conn();
+		query();
+		console.log("共耗时："+t);
+
+		let sum=0;
+		for(let i=0;i<=100;sum+=i++);
+		console.log(sum);
+		var i=Number("3a")+3;
+		console.log(i);
+	</script>
+ </body>
+</html>

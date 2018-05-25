@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>箭头函数</title>
+ </head>
+ <body>
+	<button id="btn">赞(+0)</button>
+	<script>
+		var arr=[1,34,23,123,56];
+		arr.sort((a,b)=>a-b);
+		console.log(arr);
+		
+		var str="you can you up";
+		str=str.replace(/\b[a-z]/ig,kw=>kw.toUpperCase()
+		);
+		console.log(str);
+
+		var arr1=[1,2,3,4,5];
+		arr1.forEach((elem,i,arr)=>
+			arr[i]=elem*2
+		);
+		console.log(String(arr1));
+
+		var arr2=[1,2,3,4,5];
+		var evens=arr2.map(elem=>elem*2
+		);
+		console.log(String(arr2));
+		console.log(String(evens));
+
+		btn.onclick=function(){//事件处理函数一般不建议简写，因为事件处理函数一般多用到this,而简写会共享外面的this,从而导致出错
+			//this->btns
+			var html=this.innerHTML;
+			var n=parseInt(html.slice(3,-1));
+			n++;
+			this.innerHTML="赞(+"+n+")";
+		};
+
+		setInterval(()=>console.log("love u!"),1000);
+
+		(()=>{
+			var end=new Date();
+			console.log(
+				"执行完成,at:"+end.toLocaleTimeString());
+		})();
+		console.log(end);//报错!
+	</script>
+ </body>
+</html>

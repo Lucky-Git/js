@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>doubleball</title>
+ </head>
+ <body>
+	<script>
+		function doubleball(){
+			//6个红球：1~33之间
+			//定义空数组reds
+			var reds=[];
+			//反复
+			while(reds.length<6){
+				/*reds[i]=parseInt(Math.random()*(33-1+1)+1);*/
+				var r=parseInt(Math.random()*(33-1+1)+1);//在1~33之间生成一个随机整数，保存在变量r
+
+				for(var i=0;i<reds.length;i++){
+					if(r===reds[i]){
+						break;
+					}
+				}  
+				if(i===reds.length){
+					reds.push(r);//将r压入reds中
+				}	
+			}	
+			//将reds按数字升序排列
+			reds.sort(function(a,b){return a-b;});
+			//1个蓝球：1~16之间
+			var b=parseInt(Math.random()*(16-1+1)+1);//在1~16之间生成一个随机整数，保存在变量b
+			document.write(reds.toString()+"|"+b);
+			//在页面显示：红，红，红，红，红，红|蓝
+		}
+		doubleball();
+	</script>
+ </body>
+</html>

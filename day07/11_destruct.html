@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>解构</title>
+ </head>
+ <body>
+	<script>
+		//数组解构
+		var date=[2018,5,24,17,01];
+		var [y,M,d,,m]=date;
+		console.log(y,M,d,m);
+
+		//对象解构属性
+		var obj={
+			year:2018,
+			month:5,
+			date:24,
+			hour:16,
+			minute:42
+		};
+		var {year,month,date,hour,monute}=obj;
+		console.log(year,date,hour);
+
+		//解构对象方法
+		var users={
+			signin:function(){
+				console.log("登录");
+			},
+			signout:function(){
+				console.log("注销");
+			},
+			signup:function(){
+				console.log("注册");
+			}
+		};
+		var {signin,signup}=users;
+		signin();
+		signup();
+
+	</script>
+ </body>
+</html>

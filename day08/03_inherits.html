@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>继承</title>
+ </head>
+ <body>
+	<script>
+		class Enemy{
+			constructor(fname,speed){
+				this.fname=fname;
+				this.speed=speed;
+			}
+			fly(){
+				console.log(this.fname+"以时速"+this.speed+"飞行");
+			}
+		}
+		
+		class Plane extends Enemy{
+			constructor(fname,speed,score){
+			//this->f16
+			/*window.*/super(fname,speed);//this->Plane
+				this.score=score;
+			}
+			getScore(){
+				console.log("击落"+this.fname+"得"+this.score+"分");
+			}
+		}
+
+		var f16=new Plane("f16",1000,5);
+		f16.fly();
+		f16.getScore();
+		//模仿Plane写Bee
+
+		function Bee(fname,speed,bonus){
+			//this->f16
+			/*window.*/Enemy.call(this,fname,speed);//this->Plane
+			this.bonus=bonus;
+		}
+		Bee.prototype.getBonus=function(){
+			console.log("击落"+this.fname+"得"+this.bonus+"分");
+		}
+		Object.setPrototypeOf(Bee.prototype,Enemy.prototype);
+		var b1=new Bee("b1",500,10);
+		b1.fly();
+		b1.getBonus();
+	</script>
+ </body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>date</title>
+ </head>
+ <body>
+	<script>
+		var hiredate=new Date("2012/5/30");
+		var enddate=new Date(hiredate);
+		enddate.setFullYear(enddate.getFullYear()+3);
+		var rennewdate=new Date(enddate);
+		rennewdate.setDate(rennewdate.getDate()-7);
+		if(rennewdate.getDay()==6){
+			rennewdate.setDate(rennewdate.getDate()-1);
+		}else if(rennewdate.getDay()==0){
+			rennewdate.setDate(rennewdate.getDate()-2);
+		}
+
+
+		console.log(hiredate);
+		console.log(enddate.toLocaleDateString());
+		console.log(rennewdate.toLocaleString());
+
+		function format(date){
+			var week=["日","一","二","三","四","五","六"];
+			var y=date.getFullYear();
+			var m=date.getMonth()+1;
+			m<10&&(m="0"+m);
+			var d=date.getDate();
+			d<10&&(d="0"+d);
+			var day=week[date.getDay()];
+			var am=date.getHours()<12?"上午":"下午";//上午|下午
+			var h=date.getHours();
+			h>12&&(h-=12);
+			h>12&&(h="0"+h);
+			var M=date.getMinutes();
+			M<10&&(M="0"+M);
+			var s=date.getSeconds();
+			s<10&&(s="0"+s);
+			return y+"年"+m+"月"+d+"日 星期"+day+" "+am+" "+h+":"+M+":"+s;
+		}
+		document.write(format(new Date()));
+	</script>
+ </body>
+</html>
